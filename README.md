@@ -10,4 +10,6 @@ Desarrollo de componentes y aplicaciones en PHP + HTML5 + CSS3 + JS + MySQL
 ## 07.LAB07 - POO en PHP [Parte 2].
 ## 08.LAB08 - POO en PHP [Parte 3].
 ## 09.LAB09 - Integración de PHP con base de datos [Parte1].
-## 10.LAB10 - Integración de PHP con base de datos [Parte2].# DESARROLLO DE SOFTWARE VII
+## 10.LAB10 - Integración de PHP con base de datos [Parte2].
+
+# DESARROLLO DE SOFTWARE VII
