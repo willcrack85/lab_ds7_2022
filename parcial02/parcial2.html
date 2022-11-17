@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Template con PHP en Laboratorio #23">
+    <meta name="keywords" content="HTML5, CSS, Javascript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="WillCrack Solution Corp.">
+    <title>Parcial 2</title>
+    <!-- Icono de la página WEB -->
+    <link rel="shortcut icon" type="image/x-ico" href="dist/ico/wc.ico" />
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="dist/css/cover.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">Desarrollo de Software VII - 2022</h3>
+            </div>
+        </header>
+        <div class="row">
+            <div class="cover-jumbotronWC text-center col-md-12 col-md-auto border border-white">
+                <h1 class="display-4">DS7 - Parcial No. 2.0</h1>
+                <p class="lead">Se requiere una aplicaci&oacute;n web en PHP que realice la siguiente sumatoria (donde N
+                    es solicitado al usuario final):</p>
+                <hr class="my-4">
+                <p class="lead text-left">Lineamientos:</p>
+                <ul class="list-unstyled text-justify">
+                    <li>Guardar 1 registro por cada sumatoria realizada (historial).</li>
+                    <li>Estos registros se deben guardar en la tabla <code>parcial2</code> en la base de datos
+                        <code>labsdb</code> en PhpMyAdmin.
+                    </li>
+                    <li>Los campos minimos son:</li>
+                    <ul>
+                        <li><b>ID (int) [llave primaria, auto_increment]</b></li>
+                        <li><b>N</b></li>
+                        <li><b>Factorial</b></li>
+                        <li><b>Sumatoria</b></li>
+                    </ul>
+                    <li>A medida que se realicen conversiones en la p&aacute;gina php debe mostrar todo los resultados
+                        en una tabla <code>HTML</code> debajo del formulario mostrando el historial de resultados
+                        previos y el actual.</li>
+                    <li>Permitir al usuario una opci&oacute;n de modificar sumatoria, volviendo a pedir el valor de N y
+                        actualizar el resultado registrado previamente.</li>
+                    <li>Todas las integraciones entre <code>PHP</code> y <code>MySQL</code> deben realizarse a
+                        trav&eacute;s de procedimientos almacenados (como se realiz&oacute; en los labs).</li>
+                </ul>
+                <hr class="my-4">
+            </div>
+        </div>
+        <div class='row'>
+            <div class='cover-jumbotronWC col-md-12 col-md-auto border border-white'>
+                <h3 class="text-center">FACTORIAL DE UN N&Uacute;MERO N</h3>
+                <form name='frmFactorial' method='POST' action='parcial2.php'>
+                    <div class='form-row'>
+                        <div class='col-7 mt-3 mb-2'>
+                            <label class='col-form-label'>Introdusca un N&uacute;mro (N!):</label>
+                        </div>
+                        <div class='col mt-3 mb-2'>
+                            <input autofocus type='text' name='vFactorial' class='form-control text-center'
+                                placeholder='#######' id="wc-center">
+                        </div>
+                        <div class='col mt-3 mb-2'>
+                            <button class='form-control btn btn-outline-dark' type='submit' name='btnEnviar'>
+                                Procesar Datos
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer class="mastfoot mt-auto text-center">
+            <div class="inner">
+                <b>Dise&ntilde;ado por <a href="https://willcrackcorp.w3spaces.com/"
+                        title="WillCrack Solutions Corp., Panam&aacute;" target="_blank">WC Solutions Corp.</a>
+                    Copyright &copy; DS 7 - 2022 | William Miranda</b>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

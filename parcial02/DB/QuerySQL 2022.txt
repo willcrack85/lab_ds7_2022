@@ -1,0 +1,39 @@
+*/-----------------------------------------------------------------------------------/*
+*/-----------------------------------------------------------------------------------/*
+CREAR PROCEDIMIENTO PARA AGREGAR TABLA parcial2 EN labsdb |
+-----------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `parcial2` ( `id` tinyint(8) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Para incrementar el numero de registros.', `n` float(10,2) DEFAULT NULL COMMENT 'Para almacenar el valor de N.', `factorial` float(10,2) DEFAULT NULL COMMENT 'Para almacenar el valor de Factorial.', `sumatoria` float(10,2) DEFAULT NULL COMMENT 'Para almacenar el valor de Sumatoria.', `fecha_reg` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Uso exclusivo para auditoria interna.', PRIMARY KEY (id) ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+CREATE TABLE IF NOT EXISTS `parcial2` (
+    `id` tinyint(8) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Para incrementar el numero de registros.',
+    `n` float(10,2) DEFAULT NULL COMMENT 'Para almacenar el valor de N.',
+    `factorial` float(10,2) DEFAULT NULL COMMENT 'Para almacenar el valor de Factorial.',
+    `sumatoria` float(10,2) DEFAULT NULL COMMENT 'Para almacenar el valor de Sumatoria.',
+    `fecha_reg` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Uso exclusivo para auditoria interna.',
+    PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+*/-----------------------------------------------------------------------------------/*
+CREAR PROCEDIMIENTO PARA INSERTAR DATOS A DB parcial2     |
+-----------------------------------------------------------
+CREATE DEFINER=`willcrackcorp`@`localhost` PROCEDURE `sp_grabar_calculos`(IN valor1 varchar(255), IN valor2 varchar(255), IN valor3 varchar(255)) BEGIN SET @s = CONCAT("INSERT INTO parcial2 (n, factorial, sumatoria) VALUES ('",valor1,"','",valor2,"','",valor3,"')"); PREPARE stmt FROM @s; EXECUTE stmt; DEALLOCATE PREPARE stmt; END; 
+
+CREATE DEFINER=`willcrackcorp`@`localhost` PROCEDURE `sp_grabar_calculos`(IN valor1 varchar(255), IN valor2 varchar(255), IN valor3 varchar(255)) 
+BEGIN
+    SET @s = CONCAT("INSERT INTO parcial2 (n, factorial, sumatoria) VALUES ('",valor1,"','",valor2,"','",valor3,"')");
+    PREPARE stmt FROM @s;
+    EXECUTE stmt;
+    DEALLOCATE PREPARE stmt;
+END
+*/-----------------------------------------------------------------------------------/*
+CREAR PROCEDIMIENTO PARA CONSULTAR DATOS A DB parcial2    |
+-----------------------------------------------------------
+CREATE DEFINER=`willcrackcorp`@`localhost` PROCEDURE `sp_listar_calculos`() BEGIN SET @s = CONCAT("SELECT * FROM parcial2 ORDER BY id"); PREPARE stmt FROM @s; EXECUTE stmt; DEALLOCATE PREPARE stmt; END; 
+
+CREATE DEFINER=`willcrackcorp`@`localhost` PROCEDURE `sp_listar_calculos`() 
+BEGIN
+    SET @s = CONCAT("SELECT * FROM parcial2 ORDER BY id");
+    PREPARE stmt FROM @s;
+    EXECUTE stmt;
+    DEALLOCATE PREPARE stmt;
+END
+*/-----------------------------------------------------------------------------------/*
